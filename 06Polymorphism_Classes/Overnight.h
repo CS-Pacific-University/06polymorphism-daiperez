@@ -1,3 +1,13 @@
+//***************************************************************************
+// File name:	 Overnight.h
+// Author:		 Daisy Perez
+// Date:		   5/4/2021
+// Class:		   CS 250
+// Assignment: Polymorphism
+// Purpose:		 Sub class OVerngiht representing information for a overnight 
+//             parcel.
+//***************************************************************************
+
 #pragma once
 
 #include "Parcel.h"
@@ -12,17 +22,17 @@ public:
 		Overnight();
 		Overnight(int tid, string from, string to, int weight, int distance, int volume);
 
-		virtual int getDeliveryDay()const;
-		virtual double getCost_Insurance()const;
-		virtual double getCost_Rush()const;
-		virtual double getCost_Parcel()const;
-		virtual double getCost_Total()const;
+		int getDeliveryDay()const;
+		double getCost_Insurance();
+		double getCost_Rush();
+		double getCost_Parcel();
+		double getCost_Total();
 
-		virtual void setInsured();
-		virtual void setRush();
+		void setInsured();
+		void setRush();
 
-		virtual bool read(istream& rcIn);
-		virtual void print(ostream& rcOut)const;
+		void read(istream& rcIn);
+		void print(ostream& rcOut)const;
 
 private:
 

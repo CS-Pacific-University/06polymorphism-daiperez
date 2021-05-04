@@ -1,3 +1,12 @@
+//***************************************************************************
+// File name:	 Parcel.h
+// Author:		 Daisy Perez
+// Date:		   5/4/2021
+// Class:		   CS 250
+// Assignment: Polymorphism 
+// Purpose:		 Parent class Parcel representing information for a parcel.             
+//***************************************************************************
+
 #pragma once
 
 #include <iostream>
@@ -6,8 +15,7 @@ using namespace std;
 class Parcel {
 
 public:
-		Parcel();
-		Parcel(int tid, string from, string to, int weight, int distance);
+		Parcel(int tid=0, string from="", string to="", int weight=0, int distance=0);
 
 		
 		virtual int getDeliveryDay()const = 0;
@@ -22,7 +30,7 @@ public:
 		bool getRush();
 		int getTID();
 
-		virtual bool read(istream& rcIn);
+		virtual void read(istream& rcIn);
 		virtual void print(std:: ostream& rcOut)const;
 
 		

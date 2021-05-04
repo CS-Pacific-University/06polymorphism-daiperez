@@ -1,3 +1,13 @@
+//***************************************************************************
+// File name:	 Letter.h
+// Author:		 Daisy Perez
+// Date:		   5/4/2021
+// Class:		   CS 250
+// Assignment: Polymorphism 
+// Purpose:		 Sub class Letter representing information for a Letter 
+//             parcel.
+//***************************************************************************
+
 #pragma once
 
 #include "Parcel.h"
@@ -11,16 +21,16 @@ public:
 		Letter();
 		Letter(int tid, string from, string to, int weight, int distance);
 
-		virtual int getDeliveryDay()const;
-		virtual double getCost_Insurance()const;
-		virtual double getCost_Rush()const;
-		virtual double getCost_Parcel()const;
-		virtual double getCost_Total()const;
+		int getDeliveryDay()const;
+		double getCost_Insurance();
+		double getCost_Rush();
+		double getCost_Parcel();
+		double getCost_Total();
 
-		virtual void setInsured();
-		virtual void setRush();
+		void setInsured();
+		void setRush();
 
-		virtual bool read(istream& rcIn);
-		virtual void print(ostream& rcOut)const;
+		void read(istream& rcIn);
+		void print(ostream& rcOut)const;
 
 };

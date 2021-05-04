@@ -14,7 +14,13 @@ void insurance(Parcel* apcParcel[], int& countParcels);
 void rush(Parcel* apcParcel[], int& countParcels);
 void deliver(Parcel* apcParcel[], int& countParcels);
 
-
+//****************************************************************************
+//Function:		  main
+//Description:	Driver for Parcel using Classes for the user to choose between
+//              5 different options
+//Parameters:		none
+//Returned:			exit status
+//****************************************************************************/
 int main() {
   
     const int OPT1_PRINTALL = 1;
@@ -69,7 +75,7 @@ int main() {
     do {
         do {
             printMenu();
-            cout << "\nChoice>";
+            cout << "\nChoice> ";
             cin >> choice;
         } while (!(choice == OPT1_PRINTALL || choice == OPT2_ADDINSUR || choice == OPT3_ADDRUSH || choice == OPT4_DELIVER || choice == OPT5_QUIT));
 
@@ -78,6 +84,7 @@ int main() {
             for (int counter = 0; counter < countParcels; counter++) {
                 if (apcParcel[counter] != nullptr) {
                     apcParcel[counter]->print(cout);
+
                 }
             }
             cout << endl;
@@ -102,6 +109,15 @@ int main() {
   return EXIT_SUCCESS;
 }
 
+//****************************************************************************
+//Function:    printMenu
+//
+//Description: Prints Menu to screen
+//
+//Parameters:  none
+//
+//Returned:		 none
+//****************************************************************************/
 void printMenu() {
     const string OPT1 = "1. Print All";
     const string OPT2 = "2. Add Insurance";
@@ -114,6 +130,16 @@ void printMenu() {
         << endl;
 }
 
+//****************************************************************************
+//Function:    insurance
+//
+///Description: Adds insurance and cost to parcel and implements functions
+//
+//Parameters:  apcParcel  - an array of pointers to Parcel
+//             numParcels - the number of parcels
+//
+//Returned:		 none
+//****************************************************************************/
 void insurance(Parcel *apcParcel[], int &numParcels) {
     const int index = 1;
 
@@ -124,7 +150,7 @@ void insurance(Parcel *apcParcel[], int &numParcels) {
 
     if (apcParcel[tid - index] != nullptr) {
         apcParcel[tid - index]->setInsured();
-        cout << "\n$" <<
+        cout << "\nAdd Insurance for $" <<
             apcParcel[tid - index]->getCost_Insurance();
         apcParcel[tid - index]->print(cout);
         cout << endl;
@@ -132,6 +158,16 @@ void insurance(Parcel *apcParcel[], int &numParcels) {
     }
 }
 
+//****************************************************************************
+//Function:    rush
+//
+//Description: Adds rush and cost to parcel and implements functions
+//
+//Parameters:  apcParcel  - an array of pointers to Parcel
+//             numParcels - the number of parcels
+//
+//Returned:		 none
+//****************************************************************************
 void rush(Parcel* apcParcel[], int& countParcels) {
     const int index = 1;
 
@@ -149,6 +185,16 @@ void rush(Parcel* apcParcel[], int& countParcels) {
     }
 }
 
+//****************************************************************************
+//Function:    deliver
+//
+//Description: will output the cos to deliver the parcel as well as the number
+//              it will take to deliver the parcel             
+//Parameters:  apcParcel    - an array of pointers to Parcel
+//             numParcels   - the number of parcels
+//
+//Returned:		 none
+//****************************************************************************
 void deliver(Parcel* apcParcel[], int& countParcels) {
     const int index = 1;
     int tid;
