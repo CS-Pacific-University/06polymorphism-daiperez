@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -24,6 +24,7 @@
     <ProjectGuid>{5be4d9eb-ac8a-4b6c-96a8-7631af92a183}</ProjectGuid>
     <RootNamespace>My06PolymorphismClasses</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>06Polymorphism_Daiperez</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,7 +140,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Letter.cpp" />
+    <ClCompile Include="Overnight.cpp" />
+    <ClCompile Include="Parcel.cpp" />
+    <ClCompile Include="Postcard.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Letter.h" />
+    <ClInclude Include="Overnight.h" />
+    <ClInclude Include="Parcel.h" />
+    <ClInclude Include="Postcard.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="parcels.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
